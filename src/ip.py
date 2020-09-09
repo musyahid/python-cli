@@ -1,4 +1,7 @@
-from requests import get
+import string
+import random
 
-ip = get('https://api.ipify.org').text
-print('My public IP address is:', ip)
+def id_generator(size=10, chars=string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+
+print(id_generator())
